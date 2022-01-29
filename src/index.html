@@ -7,7 +7,33 @@
 </head>
 <body>
   <h1>Flipcards</h1>
-  <div id="app"></div>
+  <div id="app">
+    <div id="header"></div>
+    <div class="main">
+      <div></div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div id="flip-card-front" class="flip-card-front">
+          </div>
+          <div id="flip-card-back" class="flip-card-back">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons"><button onclick=next_word()>Next</button></div>
+  </div>
+
+  <script>
+    main_dict = {
+      'a': 'b',
+      'c': 'd'
+    }
+    function next_word() {
+      document.getElementById("flip-card-front").innerHTML = "<h1>" + main_dict['a'] + "</h1>";
+      document.getElementById("flip-card-back").innerHTML = "test";
+
+    };
+  </script>
 
 </body>
 </html>
