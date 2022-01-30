@@ -4,7 +4,9 @@
 
 .main {
   margin: 0 auto;
-  background-color: aquamarine;
+  padding: 50px;
+  background-color: rgb(235, 235, 235);
+  box-shadow: 1px 1px 15px 1px grey;
   width: 60%;
   display: flex;
   text-align: center;
@@ -13,7 +15,28 @@
 .buttons {
   margin: auto;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+}
+
+.next-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.left-column {
+  width: 30%;
+}
+
+.counter {
+  text-align: center;
+  font-size: 24px;
+  width: 30%;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -23,7 +46,8 @@
   background-color: transparent;
   width: 40%;
   height: 300px;
-  border: 1px solid #f1f1f1;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 50px;
 }
 
 /* This container is needed to position the front and back side */

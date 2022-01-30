@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Flipcards</title>
-  <link rel="stylesheet" href="/style.e308ff8e.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="/style.e308ff8e.js"></script></head>
-<body>
-  <h1>Flipcards</h1>
-  <div id="app">
-    <div id="header"></div>
-    <div class="main">
-      <div></div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div id="flip-card-front" class="flip-card-front">
-          </div>
-          <div id="flip-card-back" class="flip-card-back">
+  <head>
+    <title>Flipcards</title>
+    <link rel="stylesheet" href="/style.e308ff8e.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/style.e308ff8e.js"></script></head>
+  <body>
+    <h1>Flipcards</h1>
+    <div id="app">
+      <div id="header"></div>
+      <div class="main">
+        <div class="left-column"></div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div id="flip-card-front" class="flip-card-front"></div>
+            <div id="flip-card-back" class="flip-card-back"></div>
           </div>
         </div>
+        <div id="counter" class="counter"></div>
       </div>
+      <div class="buttons"><button class="next-button" onclick="next_word()">Next</button></div>
     </div>
-    <div class="buttons"><button onclick="next_word()">Next</button></div>
-  </div>
 
-  <script>main_dict = {
-  'a': 'b',
-  'c': 'd'
-};
+    <script>var i = 0;
 
 function next_word() {
-  document.getElementById("flip-card-front").innerHTML = "<h1>" + main_dict['a'] + "</h1>";
+  var myJSON = {
+    name: "John",
+    age: 30,
+    car: "asdas"
+  };
+  var keys = Object.keys(myJSON);
+  var randIndex = Math.floor(Math.random() * keys.length);
+  var randKey = keys[randIndex];
+  var name = myJSON[randKey];
+  var front = document.getElementById("flip-card-front");
+  front.style.backgroundColor = "#FFBF00";
+  front.innerHTML = name;
   document.getElementById("flip-card-back").innerHTML = "test";
+  i = i + 1;
+  document.getElementById("counter").innerHTML = i;
 }
 
 ;</script>
-
-</body>
+  </body>
 </html>
