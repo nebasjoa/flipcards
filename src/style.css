@@ -18,6 +18,17 @@
   padding: 40px;
 }
 
+.left-column {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: left;
+}
+
+.decks {
+  width: 80%;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+}
+
 .yes-button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -32,12 +43,14 @@
 }
 
 #front-content {
-  margin: 0;
+  margin: auto;
   position: absolute;
+  width: 100%;  /* for centering horizontally */
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
+  padding: auto;
 }
 
 .no-button {
@@ -144,4 +157,13 @@
 #reset-button:disabled {
   background-color: #d3d3d3;
   color: white;
+}
+
+.deck-list {
+  list-style: none;
+  padding: 0;
+}
+
+.deck-list li:hover {
+  background-color: aquamarine;
 }
