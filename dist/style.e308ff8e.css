@@ -10,6 +10,7 @@
   width: 60%;
   display: flex;
   text-align: center;
+  user-select: none;
 }
 
 .buttons {
@@ -40,7 +41,7 @@
   margin-right: 10px;
   font-size: 16px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border: 2px solid white;
+  border: 2px solid #4CAF50;
 }
 
 .yes-button:hover {
@@ -50,6 +51,17 @@
 }
 
 #front-content {
+  margin: auto;
+  position: absolute;
+  width: 100%;  /* for centering horizontally */
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  padding: auto;
+}
+
+#back-content {
   margin: auto;
   position: absolute;
   width: 100%;  /* for centering horizontally */
@@ -71,7 +83,7 @@
   display: inline-block;
   font-size: 16px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border: 2px solid white;
+  border: 2px solid red;
 }
 
 .no-button:hover {
@@ -89,6 +101,7 @@
   font-size: 48px;
   height: 50px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #4CAF50;
 }
 
 .no-counter {
@@ -96,6 +109,7 @@
   font-size: 48px;
   height: 50px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: red;
 }
 
 .question {
