@@ -26,7 +26,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-left: 10px;
+  margin-right: 10px;
   font-size: 16px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .no-button {
-  margin-right: 10px;
+  margin-left: 10px;
   background-color: #ff0000; /* Green */
   border: none;
   color: white;
@@ -55,10 +55,16 @@
   width: 30%;
 }
 
-.counter {
+.yes-counter {
   text-align: center;
-  font-size: 24px;
-  width: 30%;
+  font-size: 48px;
+  height: 50px;
+}
+
+.no-counter {
+  text-align: center;
+  font-size: 48px;
+  height: 50px;
 }
 
 .question {
@@ -113,6 +119,24 @@
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+#reset-button {
+  margin-left: 10px;
+  background-color: #0051ff;
+  color: white;
+  padding: 10px 15px 10px;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border: none;
+}
+
+#reset-button:disabled {
+  background-color: #d3d3d3;
+  color: white;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
