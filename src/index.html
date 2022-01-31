@@ -5959,6 +5959,8 @@
         var randIndex = Math.floor(Math.random() * keys.length);
         var randKey = keys[randIndex];
         var name = myJSON[randKey];
+        document.getElementById("flip-card-front").style.backgroundColor =
+          "#FFBF00";
         front.style.backgroundColor = "#FFBF00";
         front.innerHTML = randKey;
         back.innerHTML = name;
@@ -5967,7 +5969,11 @@
         document.getElementById("reset-button").disabled = false;
         let score = document.getElementById("score");
         score.innerHTML = "Score: " + ((i/(i+j))*100).toFixed(1) + "%";
-      }
+        //let node = document.createTextNode(randKey + name);
+        let node = document.createElement("p");
+        node.innerHTML = randKey + " - " + name;
+        document.getElementById("wrong-answers").appendChild(node);
+      };
 
       function reset_counters() {
         i = 0;
@@ -5976,14 +5982,18 @@
         document.getElementById("no-counter").innerHTML = j;
         document.getElementById("reset-button").disabled = true;
         score.innerHTML = "Score ?";
+        document.getElementById("wrong-answers").innerHTML = "";
       };
 
       function start() {
         document.getElementById("yes-button").style.visibility = "visible";
         document.getElementById("no-button").style.visibility = "visible";
         document.getElementById("start-button").style.visibility = "hidden";
-      }
+      };
+
+      
     </script>
     <div id="demo"><button onclick="">Klik</button></div>
+    <div id="wrong-answers" class="wrong-answers"></div>
   </body>
 </html>

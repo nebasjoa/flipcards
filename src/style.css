@@ -225,7 +225,6 @@
 .score {
   padding-top: 10px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  
 }
 
 .start-button {
@@ -233,4 +232,10 @@
   text-align: center;
   z-index: 1;
   position:absolute;
+}
+
+.wrong-answers {
+  margin: auto;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
