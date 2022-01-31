@@ -18,11 +18,33 @@
   padding: 40px;
 }
 
-.next-button {
+.yes-button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+#front-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.no-button {
+  margin-right: 10px;
+  background-color: #ff0000; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -39,12 +61,17 @@
   width: 30%;
 }
 
+.question {
+  text-align: center;
+  padding: 40px 0 0 0;
+}
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   display: inline-block;
   margin: 0 auto;
   background-color: transparent;
-  width: 40%;
+  width: 500px;
   height: 300px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 50px;
@@ -67,6 +94,7 @@
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
+  border-radius: 25px;
   position: absolute;
   width: 100%;
   height: 100%;

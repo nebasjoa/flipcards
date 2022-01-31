@@ -13,13 +13,16 @@
         <div class="left-column"></div>
         <div class="flip-card">
           <div class="flip-card-inner">
-            <div id="flip-card-front" class="flip-card-front"></div>
+            <div id="flip-card-front" class="flip-card-front">
+              <div id="front-content"></div>
+            </div>
             <div id="flip-card-back" class="flip-card-back"></div>
           </div>
         </div>
         <div id="counter" class="counter"></div>
       </div>
-      <div class="buttons"><button class="next-button" onclick="next_word()">Next</button></div>
+      <div class="question">Answered correctly?</div>
+      <div class="buttons"><button class="no-button">No</button><button class="yes-button" onclick="next_word()">Yes</button></div>
     </div>
 
     <script>var i = 0;
@@ -34,7 +37,7 @@ function next_word() {
   var randIndex = Math.floor(Math.random() * keys.length);
   var randKey = keys[randIndex];
   var name = myJSON[randKey];
-  var front = document.getElementById("flip-card-front");
+  var front = document.getElementById("front-content");
   front.style.backgroundColor = "#FFBF00";
   front.innerHTML = name;
   document.getElementById("flip-card-back").innerHTML = "test";
@@ -42,6 +45,10 @@ function next_word() {
   document.getElementById("counter").innerHTML = i;
 }
 
-;</script>
+;
+
+function wrong_answer() {
+  pass;
+}</script>
   </body>
 </html>
