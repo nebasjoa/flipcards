@@ -28,6 +28,7 @@
   display: inline-block;
   margin-right: 10px;
   font-size: 16px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #front-content {
@@ -49,6 +50,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .left-column {
@@ -59,17 +61,20 @@
   text-align: center;
   font-size: 48px;
   height: 50px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .no-counter {
   text-align: center;
   font-size: 48px;
   height: 50px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .question {
   text-align: center;
   padding: 40px 0 0 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -106,6 +111,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  text-align: center;
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -122,6 +128,7 @@
 }
 
 #reset-button {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-left: 10px;
   background-color: #0051ff;
   color: white;

@@ -1,46 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Flipcards</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body onload="reset_counters()">
-    <h1>Flipcards</h1>
-    <div id="app">
-      <div id="header"></div>
-      <div class="main">
-        <div class="left-column"></div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div id="flip-card-front" class="flip-card-front">
-              <div id="front-content"></div>
-            </div>
-            <div id="flip-card-back" class="flip-card-back">
-              <div id="back-content"></div>
-            </div>
-          </div>
-        </div>
-        <div style="width: 30%">
-          <div id="yes-counter" class="yes-counter"></div>
-          <div id="no-counter" class="no-counter"></div>
-          <button id="reset-button" onclick="reset_counters()">
-            Reset counters
-          </button>
-          <div></div>
-        </div>
-      </div>
-      <div class="question">Answered correctly?</div>
-      <div class="buttons">
-        <button class="yes-button" onclick="next_word()">Yes</button>
-        <button class="no-button" onclick="wrong_answer()">No</button>
-      </div>
-    </div>
-
-    <script>
-      var myJSON = {
+{
+   "abbiegen":"turn",
+   "Abend":"evening",
+   "Abendessen":"dinner",
    "Abendkleidung":"evening dress",
    "Abenteuer":"adventure",
+   "aber":"but",
    "abfahren":"leave (irr.)",
    "Abfall":"waste",
    "abfliegen":"start",
@@ -104,7 +68,11 @@
    "Adoption":"adoption",
    "Adresse":"address",
    "Affe":"monkey",
+   "Afrika":"Africa",
+   "Afrikaner":"African",
+   "afrikanisch":"African",
    "Agent":"agent",
+   "Agentur":"agency",
    "ähnlich":"similar",
    "Akt":"act",
    "Aktie":"share",
@@ -118,6 +86,7 @@
    "alle Menschen sind gleichwertig":"all men are equal",
    "alle paar Stunden":"every few hours",
    "alle Völker der Welt":"all the peoples of the world",
+   "alle Völker der Erde":"all the peoples of the earth",
    "Allee":"avenue",
    "allein":"alone",
    "alles":"everything",
@@ -147,6 +116,7 @@
    "am schlimmsten":"worst",
    "am weitesten":"farthest",
    "am wenigsten":"least",
+   "Amerika":"America",
    "amerikanisch":"American",
    "Amt":"office",
    "amtlich":"official",
@@ -260,6 +230,8 @@
    "Ärgernis":"nuisance",
    "Argument":"argument",
    "Argwohn":"suspicion",
+   "Arm":"arm",
+   "arm":"poor",
    "Armbanduhr":"wristwatch",
    "Ärmel":"sleeve",
    "Armut":"poverty",
@@ -366,6 +338,7 @@
    "Auge":"eye",
    "Augenblick":"moment",
    "Augenbraue":"eyebrow",
+   "August":"August",
    "aus":"out",
    "aus (heraus)":"out of",
    "aus dem Gedächtnis":"from memory",
@@ -626,6 +599,7 @@
    "bescheiden":"humble",
    "Bescheidenheit":"humbleness",
    "beschließen":"decide",
+   "beschreiben":"describe",
    "Beschreibung":"description",
    "beschützen":"guard",
    "Besen":"broom",
@@ -660,6 +634,7 @@
    "besuchen (gehen)":"go to see",
    "besuchen (kommen)":"come to see",
    "Besucher":"visitor",
+   "beten":"pray",
    "betrachten":"regard",
    "beträchtlich":"considerable",
    "Betrag":"amount",
@@ -820,6 +795,7 @@
    "Brunnen":"fountain",
    "Brust":"breast",
    "Brustkorb":"chest",
+   "Buch":"book",
    "Buchführung":"bookkeeping",
    "Buchhalter":"bookkeeper",
    "Buchhandlung":"bookshop",
@@ -1132,6 +1108,7 @@
    "ehren":"honour",
    "Ehrenwort":"word of honour",
    "ehrlich":"honest",
+   "Ei":"egg",
    "Eiche":"oak",
    "eiferssüchtig":"jealous",
    "Eifersucht":"jealousy",
@@ -1356,6 +1333,7 @@
    "Eisenbahnwagen":"wagon",
    "Eisenerz":"iron-ore",
    "eisig":"icy",
+   "Eiweiß":"egg-white",
    "elastisch":"elastic",
    "Elastizität":"elasticity",
    "Elefant":"elephant",
@@ -1401,6 +1379,7 @@
    "entdecken":"discover",
    "Entdecker":"discoverer",
    "Entdeckung":"discovery",
+   "Ente":"duck",
    "entfernen":"remove",
    "entfernt":"distant",
    "Entfernung":"distance",
@@ -1465,6 +1444,8 @@
    "Erbarmen":"mercy",
    "erblindet":"blinded",
    "Erbse":"pea",
+   "Erdbeben":"earthquake",
+   "Erdbeere":"strawberry",
    "Erdboden":"soil",
    "Erde":"earth",
    "Erde und Mond":"the earth and the moon",
@@ -5910,46 +5891,4 @@
    "zwischen zwei Personen":"between two persons",
    "zwölf":"twelve",
    "zwölfte":"twelfth"
-};
-
-      let front = document.getElementById("front-content");
-      let back = document.getElementById("back-content");
-
-      var i = 0;
-      function next_word() {
-        var keys = Object.keys(myJSON);
-        var randIndex = Math.floor(Math.random() * keys.length);
-        var randKey = keys[randIndex];
-        var name = myJSON[randKey];
-        front.style.backgroundColor = "#FFBF00";
-        front.innerHTML = name;
-        back.innerHTML = randKey;
-        i = i + 1;
-        document.getElementById("yes-counter").innerHTML = i;
-        document.getElementById("reset-button").disabled = false;
-      }
-
-      var j = 0;
-      function wrong_answer() {
-        var keys = Object.keys(myJSON);
-        var randIndex = Math.floor(Math.random() * keys.length);
-        var randKey = keys[randIndex];
-        var name = myJSON[randKey];
-        front.style.backgroundColor = "#FFBF00";
-        front.innerHTML = name;
-        back.innerHTML = randKey;
-        j = j + 1;
-        document.getElementById("no-counter").innerHTML = j;
-        document.getElementById("reset-button").disabled = false;
-      }
-
-      function reset_counters() {
-        i = 0;
-        j = 0;
-        document.getElementById("yes-counter").innerHTML = i;
-        document.getElementById("no-counter").innerHTML = j;
-        document.getElementById("reset-button").disabled = true;
-      }
-    </script>
-  </body>
-</html>
+}
