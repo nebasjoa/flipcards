@@ -40,6 +40,13 @@
   margin-right: 10px;
   font-size: 16px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 2px solid white;
+}
+
+.yes-button:hover {
+  color: #4CAF50;
+  background-color: white;
+  border: 2px solid green;
 }
 
 #front-content {
@@ -64,6 +71,13 @@
   display: inline-block;
   font-size: 16px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 2px solid white;
+}
+
+.no-button:hover {
+  color: red;
+  background-color: white;
+  border: 2px solid red;
 }
 
 .left-column {
@@ -164,8 +178,31 @@
   padding: 0;
 }
 
+.deck-list li {
+  padding: 2px;
+}
+
 .deck-list li:hover {
   background-color: aquamarine;
+}
+
+.left-section-buttons {
+  padding: 5px;
+}
+
+.import-deck-btn {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: none;
+  padding: 10px;
+  background-color: #0051ff;
+  color: white;
+}
+
+.import-deck-btn:hover {
+  border: none;
+  padding: 10px;
+  background-color: white;
+  color: #0051ff;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
