@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style.e308ff8e.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/style.e308ff8e.js"></script></head>
-  <body onload="reset_counters()">
+  <body>
     <h1>Flipcards</h1>
     <div id="app">
       <div id="header"></div>
@@ -50,8 +50,8 @@
       </div>
       <div class="question">Answered correctly?</div>
       <div class="buttons">
-        <button id="yes-button" class="yes-button" onclick="next_word()">Yes</button>
-        <button id="no-button" class="no-button" onclick="wrong_answer()">No</button>
+        <button id="yes-button" class="yes-button">Yes</button>
+        <button id="no-button" class="no-button">No</button>
       </div>
     </div>
 
@@ -5929,57 +5929,63 @@
   zwölfte: "twelfth"
 };
 var front = document.getElementById("front-content");
-var back = document.getElementById("back-content");
-var i = 0;
+var back = document.getElementById("back-content"); // returns random word from JSON file
 
-function next_word() {
+function return_word() {
   var keys = Object.keys(myJSON);
   var randIndex = Math.floor(Math.random() * keys.length);
   var randKey = keys[randIndex];
   var name = myJSON[randKey];
+  return randKey;
+}
+
+var i = 0;
+var j = 0;
+var yes_button = document.getElementById("yes-button");
+var no_button = document.getElementById("no-button");
+var start_button = document.getElementById("start-button"); // when 'Yes' button is clicked
+
+yes_button.addEventListener("click", function () {
   document.getElementById("flip-card-front").style.backgroundColor = "#FFBF00";
   front.style.backgroundColor = "#FFBF00";
-  front.innerHTML = randKey;
-  back.innerHTML = name;
+  var front_word = return_word();
+  var back_word = myJSON[front_word];
+  front.innerHTML = front_word;
+  back.innerHTML = back_word;
   i = i + 1;
   document.getElementById("yes-counter").innerHTML = i;
   document.getElementById("reset-button").disabled = false;
   var score = document.getElementById("score");
   score.innerHTML = "Score: " + (i / (i + j) * 100).toFixed(1) + "%";
-}
-
-var j = 0;
-
-function wrong_answer() {
-  var keys = Object.keys(myJSON);
-  var randIndex = Math.floor(Math.random() * keys.length);
-  var randKey = keys[randIndex];
-  var name = myJSON[randKey];
+});
+no_button.addEventListener("click", function () {
   document.getElementById("flip-card-front").style.backgroundColor = "#FFBF00";
   front.style.backgroundColor = "#FFBF00";
-  front.innerHTML = randKey;
-  back.innerHTML = name;
   j = j + 1;
   document.getElementById("no-counter").innerHTML = j;
   document.getElementById("reset-button").disabled = false;
   var score = document.getElementById("score");
-  score.innerHTML = "Score: " + (i / (i + j) * 100).toFixed(1) + "%"; //let node = document.createTextNode(randKey + name);
-
+  score.innerHTML = "Score: " + (i / (i + j) * 100).toFixed(1) + "%";
   var node = document.createElement("p");
-  node.innerHTML = randKey + " - " + name;
+  node.innerHTML = front.textContent;
   document.getElementById("wrong-answers").appendChild(node);
-}
-
-;
+  var front_word = return_word();
+  var back_word = myJSON[front_word];
+  front.innerHTML = front_word;
+  back.innerHTML = back_word;
+});
 
 function reset_counters() {
   i = 0;
   j = 0;
   document.getElementById("yes-counter").innerHTML = i;
   document.getElementById("no-counter").innerHTML = j;
-  document.getElementById("reset-button").disabled = true;
   score.innerHTML = "Score ?";
   document.getElementById("wrong-answers").innerHTML = "";
+  var front_word = return_word();
+  var back_word = myJSON[front_word];
+  front.innerHTML = front_word;
+  back.innerHTML = back_word;
 }
 
 ;
@@ -5988,10 +5994,16 @@ function start() {
   document.getElementById("yes-button").style.visibility = "visible";
   document.getElementById("no-button").style.visibility = "visible";
   document.getElementById("start-button").style.visibility = "hidden";
+  document.getElementById("reset-button").style.visibility = "visible";
+  document.getElementById("yes-counter").innerHTML = 0;
+  document.getElementById("no-counter").innerHTML = 0;
+  var front_word = return_word();
+  var back_word = myJSON[front_word];
+  front.innerHTML = front_word;
+  back.innerHTML = back_word;
 }
 
 ;</script>
-    <div id="demo"><button onclick="">Klik</button></div>
     <div id="wrong-answers" class="wrong-answers"></div>
   </body>
 </html>
