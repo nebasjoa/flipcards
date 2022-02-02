@@ -6023,7 +6023,11 @@ function start() {
   back.innerHTML = back_word;
 }
 
-;</script>
+;
+document.getElementsByClassName("flip-card").addEventListener("click", function () {
+  document.getElementsByClassName("flip-card").style.transform = "rotateY(180deg)";
+  document.getElementsByClassName("flip-card-inner").style.transform = "rotateY(180deg)";
+});</script>
     <div id="wrong-answers" class="wrong-answers"></div>
   </body>
 </html>
