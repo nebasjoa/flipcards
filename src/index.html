@@ -5960,6 +5960,14 @@
         front.style.backgroundColor = "#FFBF00";
         var front_word = return_word();
         var back_word = myJSON[front_word];
+        if (front_word.length > 12) {
+          front.style.fontSize = "28px";
+          back.style.fontSize = "28px";
+        }
+        else if (front_word.length <= 12) {
+          front.style.fontSize = "50px";
+          back.style.fontSize = "50px";
+        };
         front.innerHTML = front_word;
         back.innerHTML = back_word;
         i = i + 1;
@@ -5983,6 +5991,14 @@
         document.getElementById("wrong-answers").appendChild(node);
         var front_word = return_word();
         var back_word = myJSON[front_word];
+        if (front_word.length > 12) {
+          front.style.fontSize = "28px";
+          back.style.fontSize = "28px";
+        }
+        else if (front_word.length <= 12) {
+          front.style.fontSize = "50px";
+          back.style.fontSize = "50px";
+        };
         front.innerHTML = front_word;
         back.innerHTML = back_word;
       });
