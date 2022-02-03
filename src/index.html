@@ -31,11 +31,31 @@
             </div>
           </div>
         </div>
-        <div style="width: 30%">
-          <div><h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Words</h2></div>
-          <div id="yes-counter" class="yes-counter"></div>
-          <div id="no-counter" class="no-counter"></div>
-          <div id="score" class="score">Score ?</h4></div>
+        <div style="width: 30%; padding-left: 20px;">
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax" colspan="2">Words</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">Total:</td>
+                <td class="tg-0lax"><div id="total-counter" class="total-counter"></div></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">Correct:</td>
+                <td class="tg-0lax"><div id="yes-counter" class="yes-counter"></div></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">Incorrect:</td>
+                <td class="tg-0lax"><div id="no-counter" class="no-counter"></div></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax" colspan="2"><div id="score" class="score">Score ?</h4></div></td>
+              </tr>
+            </tbody>
+            </table>          
           <div>
           <button id="reset-button" onclick="reset_counters()">
             Reset counters
@@ -99,6 +119,7 @@
         back.innerHTML = back_word;
         i = i + 1;
         document.getElementById("yes-counter").innerHTML = i;
+        document.getElementById("total-counter").innerHTML = i+j;
         document.getElementById("reset-button").disabled = false;
         let score = document.getElementById("score");
         score.innerHTML = "Score: " + ((i/(i+j))*100).toFixed(1) + "%";
@@ -110,6 +131,7 @@
         front.style.backgroundColor = "#FFBF00";
         j = j + 1;
         document.getElementById("no-counter").innerHTML = j;
+        document.getElementById("total-counter").innerHTML = i+j;
         document.getElementById("reset-button").disabled = false;
         let score = document.getElementById("score");
         score.innerHTML = "Score: " + ((i/(i+j))*100).toFixed(1) + "%";
@@ -136,6 +158,8 @@
         j = 0;
         document.getElementById("yes-counter").innerHTML = i;
         document.getElementById("no-counter").innerHTML = j;
+        document.getElementById("total-counter").innerHTML = i+j;
+        document.getElementById("reset-button").disabled = true;
         score.innerHTML = "Score ?";
         document.getElementById("wrong-answers").innerHTML = "";
         var front_word = return_word();
@@ -151,6 +175,7 @@
         document.getElementById("reset-button").style.visibility = "visible";
         document.getElementById("yes-counter").innerHTML = 0;
         document.getElementById("no-counter").innerHTML = 0;
+        document.getElementById("total-counter").innerHTML = 0;
         var front_word = return_word();
         var back_word = myJSON[front_word];
         front.innerHTML = front_word;
@@ -158,6 +183,5 @@
       };
     </script>
     <div id="wrong-answers" class="wrong-answers"></div>
-    <div id="demo"><button onclick="loadJSON()">Klic</button></div>
   </body>
 </html>
