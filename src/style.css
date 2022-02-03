@@ -284,6 +284,7 @@
   font-size: 24px;
   overflow: hidden;
   word-break: normal;
+  width: 100px;
 }
 .tg th {
   border-style: none;

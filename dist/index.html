@@ -52,7 +52,8 @@
                 <td class="tg-0lax"><div id="no-counter" class="no-counter"></div></td>
               </tr>
               <tr>
-                <td class="tg-0lax" colspan="2"><div id="score" class="score">Score ?</div></td>
+                <td class="tg-0lax">Score:</td>
+                <td class="tg-0lax"><div id="score" class="score">?</div></td>
               </tr>
             </tbody>
             </table>          
@@ -75,7 +76,12 @@
       </div>
     </div>
 
-    <script>var myJSON = {
+    <script>function change_visibility(element, value) {
+  document.getElementById(element).style.visibility = value;
+}
+
+;
+var myJSON = {
   "a": "b",
   "c": "d"
 };
@@ -88,7 +94,8 @@ function return_word() {
   var randKey = keys[randIndex];
   var name = myJSON[randKey];
   return randKey;
-}
+} // word counters
+
 
 var i = 0;
 var j = 0;
@@ -118,7 +125,7 @@ yes_button.addEventListener("click", function () {
   document.getElementById("total-counter").innerHTML = i + j;
   document.getElementById("reset-button").disabled = false;
   var score = document.getElementById("score");
-  score.innerHTML = "Score: " + (i / (i + j) * 100).toFixed(1) + "%";
+  score.innerHTML = (i / (i + j) * 100).toFixed(1) + "%";
 });
 no_button.addEventListener("click", function () {
   document.getElementById("flip-card-front").style.backgroundColor = "#FFBF00";
@@ -128,7 +135,7 @@ no_button.addEventListener("click", function () {
   document.getElementById("total-counter").innerHTML = i + j;
   document.getElementById("reset-button").disabled = false;
   var score = document.getElementById("score");
-  score.innerHTML = "Score: " + (i / (i + j) * 100).toFixed(1) + "%";
+  score.innerHTML = (i / (i + j) * 100).toFixed(1) + "%";
   var node = document.createElement("p");
   node.innerHTML = front.textContent;
   document.getElementById("wrong-answers").appendChild(node);
@@ -155,7 +162,7 @@ function reset_counters() {
   document.getElementById("no-counter").innerHTML = j;
   document.getElementById("total-counter").innerHTML = i + j;
   document.getElementById("reset-button").disabled = true;
-  score.innerHTML = "Score ?";
+  score.innerHTML = "?";
   document.getElementById("wrong-answers").innerHTML = "";
   var front_word = return_word();
   var back_word = myJSON[front_word];
@@ -166,8 +173,8 @@ function reset_counters() {
 ;
 
 function start() {
-  document.getElementById("yes-button").style.visibility = "visible";
-  document.getElementById("no-button").style.visibility = "visible";
+  change_visibility("yes-button", "visible");
+  change_visibility("no-button", "visible");
   document.getElementById("start-button").style.visibility = "hidden";
   document.getElementById("reset-button").style.visibility = "visible";
   document.getElementById("yes-counter").innerHTML = 0;
