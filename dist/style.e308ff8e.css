@@ -123,6 +123,14 @@
   color: red;
 }
 
+.total-counter {
+  text-align: center;
+  font-size: 48px;
+  height: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
 .question {
   text-align: center;
   padding: 40px 0 0 0;
@@ -141,7 +149,7 @@
     "Lucida Sans", Arial, sans-serif;
   font-size: 50px;
   perspective: 1000px;
-  position:static;
+  position: static;
 }
 
 /* This container is needed to position the front and back side */
@@ -299,5 +307,6 @@
   text-align: right;
   vertical-align: middle;
 }
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
