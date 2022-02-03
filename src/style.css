@@ -1,3 +1,8 @@
+:root {
+  --font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+}
+
 .body {
   margin: auto;
 }
@@ -20,8 +25,7 @@
 }
 
 .left-column {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   text-align: left;
   width: 30%;
 }
@@ -43,8 +47,7 @@
   display: inline-block;
   margin-right: 10px;
   font-size: 16px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   border: 2px solid #4caf50;
   visibility: hidden;
 }
@@ -88,8 +91,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   border: 2px solid red;
   visibility: hidden;
   z-index: -1;
@@ -109,8 +111,7 @@
   text-align: center;
   font-size: 48px;
   height: 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   color: #4caf50;
 }
 
@@ -118,8 +119,7 @@
   text-align: center;
   font-size: 48px;
   height: 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   color: red;
 }
 
@@ -127,15 +127,13 @@
   text-align: center;
   font-size: 48px;
   height: 50px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
 }
 
 .question {
   text-align: center;
   padding: 40px 0 0 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -145,8 +143,7 @@
   background-color: transparent;
   width: 500px;
   height: 300px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   font-size: 50px;
   perspective: 1000px;
   position: static;
@@ -193,8 +190,7 @@
 }
 
 #reset-button {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   background-color: #0051ff;
   border-radius: 10px;
   color: white;
@@ -231,8 +227,7 @@
   display: inline-block;
   font-size: 12px;
   border: none;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   background-color: #0051ff;
   color: white;
   margin-top: 10px;
@@ -256,16 +251,16 @@
   padding: 5px;
 }
 
-.import-deck-btn {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  border: none;
+.new-card-btn {
+  font-family: var(--font);
+  border-radius: 10px;
+  border: 2px solid #0051ff;
   padding: 10px;
   background-color: #0051ff;
   color: white;
 }
 
-.import-deck-btn:hover {
+.new-card-btn:hover {
   border: none;
   padding: 10px;
   background-color: white;
@@ -274,21 +269,18 @@
 
 .score {
   padding-top: 10px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
 }
 
 .wrong-answers {
   margin: auto;
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
 }
 
 .tg td {
   border-style: none;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   font-size: 24px;
   overflow: hidden;
   word-break: normal;
@@ -296,8 +288,7 @@
 }
 .tg th {
   border-style: none;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: var(--font);
   font-size: 24px;
   overflow: hidden;
   padding: 10px 5px;
@@ -306,4 +297,62 @@
 .tg .tg-0lax {
   text-align: right;
   vertical-align: middle;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.new_card_container {
+  font-family: var(--font);
+  height: 200px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }

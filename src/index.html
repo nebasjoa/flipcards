@@ -19,7 +19,7 @@
               <li>Milk</li>
             </ul>
           </div>
-          <div class="left-section-buttons"><button class="import-deck-btn">Import new deck</button></div>
+          <div class="left-section-buttons"><button id="new-card-btn" class="new-card-btn">Create new card</button></div>
         </div>
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -74,6 +74,7 @@
         <button id="yes-button" class="yes-button">Yes</button>
         <button id="no-button" class="no-button">No</button>
       </div>
+      <div id="temp"></div>
     </div>
 
     <script>
@@ -191,5 +192,63 @@
       };
     </script>
     <div id="wrong-answers" class="wrong-answers"></div>
+
+        <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="new_card_container">
+          <label for="fname">Front side:</label>
+          <input type="text" id="front" name="frontside">
+          <label for="lname">Back side:</label>
+          <input type="text" id="back" name="backside">
+          <button id="create_new_card" onclick="create_new_card()">Create</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      // Get the modal
+    var modal = document.getElementById("myModal");
+    var create = document.getElementById("create-new-card");
+    var front_card = document.getElementById("front");
+    var back_card = document.getElementById("back");
+
+    // Get the button that opens the modal
+    var new_card_button = document.getElementById("new-card-btn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    new_card_button.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    function create_new_card() {
+      var a1 = front_card.value;
+      var b1 = back_card.value;
+      // line to append to dictionary
+      front_card.value = "";
+      back_card.value = "";
+      modal.style.display = "none";
+    }; 
+    </script>
+
   </body>
 </html>
