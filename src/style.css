@@ -277,17 +277,12 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.tg {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 .tg td {
   border-style: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 24px;
   overflow: hidden;
-  padding: 10px 5px;
   word-break: normal;
 }
 .tg th {
@@ -295,7 +290,6 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 24px;
-  font-weight: normal;
   overflow: hidden;
   padding: 10px 5px;
   word-break: normal;
