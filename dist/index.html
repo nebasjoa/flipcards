@@ -21,7 +21,7 @@
           </div>
           <div class="left-section-buttons"><button id="new-card-btn" class="new-card-btn">Create new card</button></div>
         </div>
-        <div class="flip-card">
+        <div id="flip-card" class="flip-card">
           <div class="flip-card-inner">
             <div id="flip-card-front" class="flip-card-front">
               <div id="front-content"></div>
@@ -66,6 +66,7 @@
           <button id="start-button" class="start-button" onclick="start()">
             Start
           </button>
+          <button id="end-button" class="start-button" onclick="end()">End</button>
         </div>
         </div>
       </div>
@@ -176,6 +177,8 @@ function reset_counters() {
 function start() {
   change_visibility("yes-button", "visible");
   change_visibility("no-button", "visible");
+  change_visibility("flip-card", "visible");
+  change_visibility("end-button", "visible");
   document.getElementById("start-button").style.visibility = "hidden";
   document.getElementById("reset-button").style.visibility = "visible";
   document.getElementById("reset-button").disabled = true;
@@ -186,6 +189,21 @@ function start() {
   var back_word = myJSON[front_word];
   front.innerHTML = front_word;
   back.innerHTML = back_word;
+}
+
+;
+
+function end() {
+  document.getElementById("yes-counter").innerHTML = "";
+  document.getElementById("no-counter").innerHTML = "";
+  document.getElementById("total-counter").innerHTML = "";
+  change_visibility("start-button", "visible");
+  change_visibility("end-button", "hidden");
+  i = 0;
+  j = 0;
+  score.innerHTML = "?";
+  change_visibility("yes-button", "hidden");
+  change_visibility("no-button", "hidden");
 }
 
 ;</script>
@@ -202,7 +220,7 @@ function start() {
           <input type="text" id="front" name="frontside">
           <label for="lname">Back side:</label>
           <input type="text" id="back" name="backside">
-          <button id="create_new_card" onclick="create_new_card()">Create</button>
+          <button id="create_new_card">Create</button>
         </div>
       </div>
 

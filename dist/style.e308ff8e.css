@@ -5,6 +5,7 @@
 
 .body {
   margin: auto;
+  font-family: var(--font);
 }
 
 .main {
@@ -56,6 +57,10 @@
   color: #4caf50;
   background-color: white;
   border: 2px solid green;
+}
+
+#end-button {
+  visibility: hidden;
 }
 
 #front-content {
@@ -147,6 +152,7 @@
   font-size: 50px;
   perspective: 1000px;
   position: static;
+  visibility: hidden;
 }
 
 /* This container is needed to position the front and back side */
@@ -222,16 +228,23 @@
 }
 
 .start-button {
+  font-family: var(--font);
+  background-color: #0051ff;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 15px 10px;
+  margin-top: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
-  border: none;
-  font-family: var(--font);
-  background-color: #0051ff;
-  color: white;
-  margin-top: 10px;
-  padding: 10px 15px 10px;
+  border: 2px solid #0051ff;
+}
+
+.start-button:hover {
+  color: #0051ff;
+  background-color: white;
+  border: 2px solid #0051ff;
 }
 
 .deck-list {
@@ -319,7 +332,7 @@
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
